@@ -84,6 +84,76 @@
         <label for="age">Age:</label>
         <input type="number" name="age"><br><br>
 
+        <label for="sex">Sex:</label>
+        <select name="sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" name="diagnosis"><br><br>
+
+        <label for="doa">Date of Admission:</label>
+        <input type="date" name="doa"><br><br>
+
+        <label for="dod">Date of Discharge:</label>
+        <input type="date" name="dod"><br><br>
+
+        <label for="discharge_status">Discharge Status:</label>
+        <select name="discharge_status">
+            <option value="">-- Select --</option>
+            {% for option in discharge_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="organism">Organism:</label>
+        <select name="organism">
+            {% for organism in organisms %}
+            <option value="{{ organism }}">{{ organism }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="antibiotic">Antibiotic Used:</label>
+        <select name="antibiotic" multiple>
+            {% for antibiotic in antibiotics %}
+            <option value="{{ antibiotic }}">{{ antibiotic }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="comorbidities">Comorbidities:</label>
+        <select name="comorbidities" multiple>
+            {% for comorbidity in comorbidities_list %}
+            <option value="{{ comorbidity }}">{{ comorbidity }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="apache_ii">APACHE II Score:</label>
+        <input type="number" name="apache_ii"><br><br>
+
+        <label for="sofa_score">SOFA Score:</label>
+        <input type="number" name="sofa_score"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Data Entry</title>
+</head>
+<body>
+    <h1>Enter Research Data</h1>
+    <form method="POST">
+        <label for="patient_name">Patient Name:</label>
+        <input type="text" name="patient_name" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age"><br><br>
+
         <label for="discharge_status">Discharge Status:</label>
         <select name="discharge_status">
             <option value="">-- Select --</option>
